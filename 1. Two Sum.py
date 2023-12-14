@@ -27,7 +27,7 @@ def twoSum(nums, target):
     first = 0
     nums_length = len(nums)
     result = []
-    for number in nums:
+    for _ in nums:
         second = 1
         while second < (nums_length - 1):
             if nums[first] + nums[second] == target:
