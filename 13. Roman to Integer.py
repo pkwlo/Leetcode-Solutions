@@ -41,12 +41,19 @@ Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
 
 
 def romanToInt(roman_numeral):
-    pass
+    roman_dictionary = {"I": 1, "IV": 4, "V": 5, "IX": 9, "X": 10, "XL": 40, "L": 50,
+                        "XC": 90, "C": 100, "CD": 400, "D": 500, "CM": 900, "M": 1000}
+    if len(roman_numeral) == 0:
+        return 0
+    elif roman_numeral[0:2] in roman_dictionary:
+        return roman_dictionary[roman_numeral[0:2]] + romanToInt(roman_numeral[2:])
+    else:
+        return roman_dictionary[roman_numeral[0]] + romanToInt(roman_numeral[1:])
 
 
 def main():
     roman_numeral = "MCMXCIV"
-    romanToInt(roman_numeral)
+    print(romanToInt(roman_numeral))
 
 
 if __name__ == "__main__":
