@@ -23,12 +23,17 @@ Explanation: Reads 01 from right to left. Therefore it is not a palindrome.
 
 
 def isPalindrome(number):
-    pass
+    if not number:
+        return True
+    elif number[0] == number[-1]:
+        return isPalindrome(number[1:-1])
+    else:
+        return False
 
 
 def main():
     number = 121
-    isPalindrome(number)
+    print(isPalindrome(str(number)))
 
 
 if __name__ == "__main__":
