@@ -23,23 +23,18 @@ Output: true
 """
 
 
-def isPowerOfFour(number, exponent):
+def isPowerOfFour(number):
     if number == 0:
         return False
     elif number == 1:
         return True
-    elif number == 4 * exponent:
-        return True
-    elif number >= 4 * exponent * 4:
-        return isPowerOfFour(number, exponent * 4)
     else:
-        return False
+        return number % 4 == 0 and isPowerOfFour(number // 4)
 
 
 def main():
-    number = 16
-    exponent = 1
-    print(isPowerOfFour(number, exponent))
+    number = 64
+    print(isPowerOfFour(number))
 
 
 if __name__ == "__main__":
