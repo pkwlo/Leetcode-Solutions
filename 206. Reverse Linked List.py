@@ -12,12 +12,34 @@ Output: []
 """
 
 
+# def reverseList(head):
+#     return head[::-1]
+
+
+# using looping
+# def reverseList(head):
+#     result = []
+#     while len(head) > 0:
+#         result.append(head[-1])
+#         head.pop(-1)
+#     return result
+
+
+# using list comprehension
+# def reverseList(head):
+#     return [head[i] for i in range(len(head) - 1, -1, -1)]
+
+
+# using recursion
 def reverseList(head):
-    return head[::-1]
+    if not head:
+        return []
+    else:
+        return [head[-1]] + reverseList(head[:-1])
 
 
 def main():
-    head = []
+    head = [1, 2, 3, 4, 5]
     print(reverseList(head))
 
 
