@@ -25,11 +25,10 @@ Output: [0,1]
 
 def twoSum(nums, target):
     first = 0
-    nums_length = len(nums)
     result = []
     for _ in nums:
         second = 1
-        while second < (nums_length - 1):
+        while second < (len(nums) - 1):
             if nums[first] + nums[second] == target:
                 result.append(first)
                 result.append(second)
@@ -37,13 +36,13 @@ def twoSum(nums, target):
             else:
                 second += 1
         first += 1
-    print(result)
+    return result
 
 
 def main():
     nums = [3, 4, 2]
     target = 7
-    twoSum(nums, target)
+    print(twoSum(nums, target))
 
 
 if __name__ == "__main__":
